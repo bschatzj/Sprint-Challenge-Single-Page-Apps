@@ -2,6 +2,15 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import CharacterCard from './CharacterCard'
 import Search from './SearchForm'
+import styled from "styled-components";
+
+
+const List = styled.section`
+display:flex;
+flex-direction: column;
+align-items: center;
+width:100%;
+`
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
@@ -15,7 +24,6 @@ export default function CharacterList() {
       .get('https://rickandmortyapi.com/api/character/')
       .then(response => {
         setCharacters(response.data.results);
-        console.log(characters)
       })
       .catch(error => {
         console.log('error', error)
@@ -23,7 +31,6 @@ export default function CharacterList() {
     // TODO: Add API Request here - must run in `useEffect`
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
   }, []);
-  console.log(characters)
 
   const handleChange = event => {
     setPeram(event.target.value.toLowerCase());
@@ -36,7 +43,7 @@ export default function CharacterList() {
 
 
   return (
-    <div class='list'>
+    <List>
 
       <Search
         handleChange={handleChange}
@@ -44,8 +51,22 @@ export default function CharacterList() {
         search={search}
         submit={submit}
       />
+      {characters.map(char => {
+        if (char.name.toLowerCase().includes(search)) {
+          return (
+            <CharacterCard
+              name={char.name}
+              species={char.species}
+              image={char.image}
+              gender={char.gender}
+              status={char.status}
+              location={char.location}
+            />
+          )
+        }
+      })
       }
       {/* <CharacterCard search={filteredCharacters} /> */}
-    </div>
+    </List>
   );
 }
