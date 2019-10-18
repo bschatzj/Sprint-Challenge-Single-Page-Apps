@@ -20,8 +20,6 @@ font-size: 2rem;
 
 
 export default function SearchForm(props) {
- 
-  console.log(props.peram)
   return (
     <section>
       <form onSubmit={props.submit}>
@@ -29,7 +27,7 @@ export default function SearchForm(props) {
           name="search"
           type="search"
           placeholder='search here'
-          value={props.peram}
+          value={props.epPeram}
           onChange={props.handleChange}
         />
         <Button type="submit">Search</Button>
@@ -37,3 +35,4 @@ export default function SearchForm(props) {
     </section>
   );
 }
+

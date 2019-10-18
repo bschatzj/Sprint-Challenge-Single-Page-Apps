@@ -3,24 +3,24 @@ import styled from "styled-components";
 
 
 const Card = styled.div`
-background-color: green;
-width: 40%;
+background-color: darkmagenta;
+width: 50%;
 display: flex;
 justify-content: center;
 flex-direction: column;
 align-items: center;
 margin: 1%;
-color: maroon;
+color: dodgerblue;
 text-align: center;
 `
 
-export default function LocationCard(props) {
+export default function EpisodeCard(props) {
   return (
   <Card >
     <div>
       <h2>Name: {props.name}</h2>
-      <p>Type: {props.type}</p>
-      <p>Dimension: {props.dimension}</p>
+      <p>Date: {props.date}</p>
+      <p>Episode: {props.episode}</p>
   </div>
 </Card>
   )
