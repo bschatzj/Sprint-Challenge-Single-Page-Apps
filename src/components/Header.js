@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <>
     <Title>
-    <h1 className="ui center">Rick &amp; Morty Fan Page</h1>
+    <h1 className="ui center">Rick &amp; Morty <br></br> Fan Page</h1>
     </Title>
     <Head>
       <NavLink to={'/'}><Nav>Home</Nav></NavLink>

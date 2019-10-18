@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Header = styled.h1`
 color: orange;
-font-size: 3.5rem;
+font-size: 3.2rem;
 `
 const Welcome = styled.header`
 display:flex;

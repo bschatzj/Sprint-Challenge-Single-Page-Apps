@@ -39,6 +39,7 @@ export default function CharacterList() {
   const submit = e => {
     e.preventDefault();
     setSearch(peram)
+    setPeram('')
   };
 
 
