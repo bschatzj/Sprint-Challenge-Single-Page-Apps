@@ -27,6 +27,7 @@ export default function Header() {
       <NavLink to={'/'}><Nav>Home</Nav></NavLink>
       <NavLink to={'/characters/'}><Nav>Characters</Nav></NavLink>
       <NavLink to={'/locations/'}><Nav>Locations</Nav></NavLink>
+      <NavLink to={'/episodes'}><Nav>Episodes</Nav></NavLink>
     </Head>
     </>
   );
