@@ -4,16 +4,21 @@ import { Route } from 'react-router-dom';
 import Characters from './components/CharacterList';
 import WelcomePage from './components/WelcomePage';
 import Location from './components/LocationsList';
+import styled from "styled-components";
+
+const Main = styled.main`
+background: black;
+`
 
 
 
 export default function App() {
   return (
-    <main>
+    <Main>
       <Header />
       <Route exact path="/" component={WelcomePage} />
       <Route path="/characters" component={Characters} />
       <Route path="/locations" component={Location} />
-    </main>
+    </Main>
   );
 }
